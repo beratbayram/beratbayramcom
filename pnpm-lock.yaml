@@ -16,9 +16,6 @@ importers:
       "@emotion/styled":
         specifier: ^11.14.0
         version: 11.14.0(@emotion/react@11.14.0(@types/react@19.1.6)(react@19.1.0))(@types/react@19.1.6)(react@19.1.0)
-      "@fontsource/roboto":
-        specifier: ^5.2.5
-        version: 5.2.5
       "@mui/icons-material":
         specifier: ^7.1.0
         version: 7.1.0(@mui/material@7.1.0(@emotion/react@11.14.0(@types/react@19.1.6)(react@19.1.0))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@19.1.6)(react@19.1.0))(@types/react@19.1.6)(react@19.1.0))(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@types/react@19.1.6)(react@19.1.0)
@@ -349,12 +346,6 @@ packages:
         integrity: sha512-4SaFZCNfJqvk/kenHpI8xvN42DMaoycy4PzKc5otHxRswww1kAt82OlBuwRVLofCACCTZEcla2Ydxv8scMXaTg==,
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
-
-  "@fontsource/roboto@5.2.5":
-    resolution:
-      {
-        integrity: sha512-70r2UZ0raqLn5W+sPeKhqlf8wGvUXFWlofaDlcbt/S3d06+17gXKr3VNqDODB0I1ASme3dGT5OJj9NABt7OTZQ==,
-      }
 
   "@humanfs/core@0.19.1":
     resolution:
@@ -4066,8 +4057,6 @@ snapshots:
     dependencies:
       "@eslint/core": 0.15.0
       levn: 0.4.1
-
-  "@fontsource/roboto@5.2.5": {}
 
   "@humanfs/core@0.19.1": {}
 

@@ -1,5 +1,8 @@
 "use client";
 
+// https://kokonutui.com/docs/components/background-paths
+// TODO add mention to the author
+
 import { motion } from "motion/react";
 
 const position = 0;
@@ -18,9 +21,9 @@ const PATHS = Array.from({ length: 36 }, (_, i) => ({
 
 export function BgAnimation() {
   return (
-    <div className="absolute bottom-0 left-0 flex min-h-screen w-full items-center justify-center overflow-hidden">
+    <div className="pointer-events-none absolute bottom-0 left-0 flex min-h-screen w-full items-center justify-center overflow-hidden">
       <svg
-        className="h-[100vh] translate-y-[200px] dark:text-slate-950"
+        className="h-[100vh] translate-y-[200px] text-black dark:text-white"
         viewBox="0 0 696 316"
         fill="none"
         aria-hidden="true"

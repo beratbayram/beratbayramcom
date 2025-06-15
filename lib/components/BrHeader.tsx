@@ -8,14 +8,14 @@ import { BrLinks } from "./BrLinks";
 
 export function BrHeader() {
   return (
-    <header className="flex items-center justify-between p-4 gap-4">
-      <h1 className="text-2xl font-bold flex items-center justify-start-safe flex-1">
+    <header className="flex items-center justify-between gap-4 p-4">
+      <h1 className="justify-start-safe flex flex-1 items-center text-2xl font-bold">
         <Link href="/">Berat BAYRAM</Link>
       </h1>
-      <nav className="flex space-x-4 w-1/2 flex-1 justify-center-safe *:text-lg *:hover:underline">
+      <nav className="flex w-1/2 flex-1 justify-center-safe space-x-4 *:text-lg *:hover:underline">
         <BrLinks />
       </nav>
-      <nav className="flex space-x-4 w-1/2 flex-1 justify-end-safe">
+      <nav className="flex w-1/2 flex-1 justify-end-safe space-x-4">
         <Link href="https://linkedin.com/in/berat-bayram/">
           <IconButton aria-label="linkedin" color="inherit">
             <LinkedInIcon />

@@ -12,15 +12,11 @@ const LINKS = [
 export function BrLinks() {
   const pathname = usePathname();
 
-  const isActive = (href: string) => (pathname === href ? "text-bold" : "");
+  const isActive = (href: string) => (pathname === href ? "underline" : "");
 
-  return (
-    <>
-      {LINKS.map(({ href, label }) => (
-        <Link key={href} href={href} className={isActive(href)}>
-          {label}
-        </Link>
-      ))}
-    </>
-  );
+  return LINKS.map(({ href, label }) => (
+    <Link key={href} href={href} className={isActive(href)}>
+      {label}
+    </Link>
+  ));
 }

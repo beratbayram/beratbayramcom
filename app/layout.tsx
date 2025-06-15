@@ -8,6 +8,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./globals.css";
 import { BrHeader } from "@/lib/components/BrHeader";
+import BgAnimation from "@/lib/components/BgAnimation";
 
 export const metadata = METADATA;
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <CssBaseline />
           <BrHeader />
           {children}
+          <BgAnimation />
         </AppRouterCacheProvider>
       </body>
     </html>

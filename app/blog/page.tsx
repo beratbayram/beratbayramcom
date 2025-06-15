@@ -1,6 +1,6 @@
 export default function BlogPage() {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-12">
+    <div className="mx-auto max-w-xl py-12">
       <h1 className="mb-4 text-4xl font-bold">Blog</h1>
       <p className="mb-6 text-lg text-gray-700">
         Welcome to my blog! Here are some recent posts:

@@ -7,6 +7,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "./globals.css";
+import { BrHeader } from "@/lib/components/BrHeader";
 
 export const metadata = METADATA;
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <AppRouterCacheProvider>
           <CssBaseline />
+          <BrHeader />
           {children}
         </AppRouterCacheProvider>
       </body>

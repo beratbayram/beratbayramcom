@@ -28,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={THEME}>
-            <div className="mx-auto max-w-4xl p-4">
+            <div className="mx-auto max-w-4xl px-4">
               <CssBaseline enableColorScheme />
               <BrHeader />
               {children}

@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center justify-between gap-2 pt-10 sm:flex-row-reverse">
       <Image src={pp} alt="Profile Picture" className="size-3/5 sm:size-1/2" />
-      <main className="flex flex-col gap-24">
+      <main className="flex flex-col gap-4 sm:gap-12">
         <div className="flex flex-col gap-2">
           <div className="text-md font-normal text-gray-500">
             Hey, I&apos;m a

@@ -8,7 +8,7 @@ import { BrLinks } from "./BrLinks";
 
 export function BrHeader() {
   return (
-    <header className="flex items-center justify-between gap-4 py-4">
+    <header className="flex items-center justify-between gap-4">
       <h1 className="justify-start-safe flex flex-1 items-center text-2xl font-bold">
         <Link href="/">Berat BAYRAM</Link>
       </h1>

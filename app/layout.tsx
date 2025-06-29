@@ -7,6 +7,7 @@ import BgAnimation from "@/lib/components/BgAnimation";
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "@mui/material/styles";
 import { THEME } from "@/lib/const/THEME";
+import { ReactNode } from "react";
 
 export const metadata = METADATA;
 
@@ -18,7 +19,7 @@ const roboto = Roboto({
 });
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={THEME}>
-            <div className="mx-auto w-2xl">
+            <div className="mx-auto max-w-4xl p-4">
               <CssBaseline enableColorScheme />
               <BrHeader />
               {children}

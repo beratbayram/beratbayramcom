@@ -1,3 +1,4 @@
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { METADATA } from "@/lib/const/METADATA";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -22,10 +23,14 @@ interface RootLayoutProps {
   children: ReactNode;
 }
 
+// suppressHydrationWarning is needed because:
+// https://mui.com/material-ui/react-init-color-scheme-script/
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={roboto.className}>
+    <html lang="en" className={roboto.className} suppressHydrationWarning>
       <body>
+        <InitColorSchemeScript />
         <AppRouterCacheProvider>
           <ThemeProvider theme={THEME}>
             <div className="mx-auto max-w-4xl px-4">

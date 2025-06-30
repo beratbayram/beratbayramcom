@@ -8,5 +8,7 @@ export const THEME = createTheme({
   colorSchemes: {
     dark: true,
   },
-  cssVariables: true,
+  cssVariables: {
+    colorSchemeSelector: "data",
+  },
 });

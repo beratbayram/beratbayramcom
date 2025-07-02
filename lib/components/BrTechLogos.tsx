@@ -8,7 +8,7 @@ export function BrTechLogos() {
   return (
     <div className="flex items-center justify-between gap-2 *:size-15">
       <Image src={react} alt="React Logo" />
-      <Image src={nextJS} alt="Next.js Logo" />
+      <Image src={nextJS} alt="Next.js Logo" className="dark:invert" />
       <Image src={TS} alt="TypeScript Logo" />
       <Image src={lit} alt="Lit Logo" />
     </div>

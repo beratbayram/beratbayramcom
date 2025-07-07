@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "pnpm kill && next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "tsc --noEmit && next lint",
+    "kill": "kill-port 3000 3001 3002",
     "prepare": "husky"
   },
   "dependencies": {
@@ -39,7 +40,8 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
-      "sharp"
+      "sharp",
+      "unrs-resolver"
     ]
   },
   "lint-staged": {

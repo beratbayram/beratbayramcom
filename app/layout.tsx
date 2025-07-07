@@ -1,14 +1,11 @@
-import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
-import { METADATA } from "@/lib/const/METADATA";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import CssBaseline from "@mui/material/CssBaseline";
-import "./globals.css";
-import { BrHeader } from "@/lib/components/BrHeader";
 import BgAnimation from "@/lib/components/BgAnimation";
+import { BrHeader } from "@/lib/components/BrHeader";
+import { BrTheme } from "@/lib/components/BrTheme";
+import { METADATA } from "@/lib/const/METADATA";
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { Roboto } from "next/font/google";
-import { ThemeProvider } from "@mui/material/styles";
-import { THEME } from "@/lib/const/THEME";
 import { ReactNode } from "react";
+import "./globals.css";
 
 export const metadata = METADATA;
 
@@ -28,19 +25,16 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={roboto.className} suppressHydrationWarning>
+    <html lang="en" className={roboto.variable} suppressHydrationWarning>
       <body>
-        <InitColorSchemeScript />
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={THEME}>
-            <div className="mx-auto max-w-4xl px-4">
-              <CssBaseline enableColorScheme />
-              <BrHeader />
-              {children}
-            </div>
-            <BgAnimation />
-          </ThemeProvider>
-        </AppRouterCacheProvider>
+        <InitColorSchemeScript attribute="class" />
+        <BrTheme>
+          <div className="mx-auto max-w-4xl px-4">
+            <BrHeader />
+            {children}
+          </div>
+          <BgAnimation />
+        </BrTheme>
       </body>
     </html>
   );

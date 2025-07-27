@@ -2,7 +2,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <h1 className="mb-6 text-4xl font-bold">About</h1>
+        <h1 className="mb-8 text-4xl font-bold">About Me</h1>
 
         <p className="mb-8">
           Front-End Engineer with expertise in React, Next.js, TypeScript, and

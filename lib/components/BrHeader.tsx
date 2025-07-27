@@ -4,7 +4,7 @@ import { BrSocials } from "./BrSocials";
 
 export function BrHeader() {
   return (
-    <header className="sticky top-0 right-0 left-0 z-10 flex items-center justify-between gap-4 bg-white py-4 dark:bg-(--mui-palette-background-default)">
+    <header className="sticky top-0 right-0 left-0 z-10 flex items-center justify-between gap-4 bg-white py-4 dark:bg-(--mui-palette-background-default) print:hidden">
       <nav className="flex justify-center-safe gap-4">
         <div className="inline sm:hidden">
           <BrHeaderMobile />

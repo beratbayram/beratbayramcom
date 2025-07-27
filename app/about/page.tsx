@@ -1,8 +1,18 @@
+import BrPrintButton from "@/lib/components/BrPrintButton";
+
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <h1 className="mb-8 text-4xl font-bold">About Me</h1>
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl font-bold print:hidden">About Me</h1>
+            <h1 className="hidden text-4xl font-bold print:block">
+              Berat BAYRAM
+            </h1>
+          </div>
+          <BrPrintButton />
+        </div>
 
         <p className="mb-8">
           Front-End Engineer with expertise in React, Next.js, TypeScript, and
@@ -209,7 +219,7 @@ export default function AboutPage() {
             <li>
               <strong>
                 <a
-                  href="https://www.turkiye.gov.tr/belge-dogrulama"
+                  href="https://drive.google.com/file/d/1k5FNs10I7qrssCZp_eOu1T7JHEiMb7Bj/view?usp=sharing"
                   className="text-blue-600 hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -11,6 +11,13 @@ const theme = createTheme({
       main: "rgba(0, 0, 0, 0.87)",
     },
   },
+  components: {
+    MuiButtonBase: {
+      defaultProps: {
+        centerRipple: true,
+      },
+    },
+  },
   typography: {
     fontFamily: "var(--font-roboto)",
   },

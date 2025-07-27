@@ -1,7 +1,9 @@
 "use client";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { BrTitle } from "./BrTitle";
 
 const LINKS = [
   { href: "/about", label: "About" },
@@ -11,33 +13,35 @@ const LINKS = [
 ];
 
 interface BrLinksProps {
-  children?: React.ReactNode;
+  orientation?: "horizontal" | "vertical";
 }
 
-export function BrLinks({ children }: BrLinksProps) {
+export function BrLinks({ orientation }: BrLinksProps) {
   const pathname = usePathname();
-  const router = useRouter();
+
+  const variant = orientation === "vertical" ? "fullWidth" : "standard";
 
   return (
-    <Tabs value={pathname} aria-label="tabs">
+    <Tabs
+      value={pathname}
+      aria-label="tabs"
+      orientation={orientation}
+      variant={variant}
+    >
       <Tab
         value={"/"}
         key={"/"}
-        label={children}
-        onClick={() => {
-          if ("/" === pathname) return;
-          router.push("/");
-        }}
+        label={<BrTitle />}
+        LinkComponent={Link}
+        href={"/"}
       />
       {LINKS.map(({ href, label }) => (
         <Tab
           value={href}
           key={href}
           label={label}
-          onClick={() => {
-            if (href === pathname) return;
-            router.push(href);
-          }}
+          LinkComponent={Link}
+          href={href}
         />
       ))}
     </Tabs>

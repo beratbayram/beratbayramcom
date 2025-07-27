@@ -1,54 +1,15 @@
-import Link from "next/link";
-
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <h1 className="mb-6 text-4xl font-bold">Frontend Web Developer</h1>
+        <h1 className="mb-6 text-4xl font-bold">About</h1>
 
-        <div className="mb-8 space-y-2">
-          <p>
-            <strong>Email:</strong> beratbayram7@gmail.com
-          </p>
-          <p>
-            <strong>LinkedIn:</strong>{" "}
-            <a
-              href="https://linkedin.com/in/berat-bayram"
-              className="text-blue-600 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              linkedin.com/in/berat-bayram
-            </a>
-          </p>
-          <p>
-            <strong>Website:</strong>{" "}
-            <Link href="/" className="text-blue-600 hover:underline">
-              beratbayram.com
-            </Link>
-          </p>
-          <p>
-            <strong>Phone:</strong> +90 539 913 67 33
-          </p>
-          <p>
-            <strong>Location:</strong> Ankara, Türkiye (Open to relocate)
-          </p>
-        </div>
-
-        <hr className="my-8" />
-
-        <h3 className="mb-4 text-2xl font-bold">
-          TL;DR: I love painting boxes!
-        </h3>
         <p className="mb-8">
           Front-End Engineer with expertise in React, Next.js, TypeScript, and
           Lit. Built UI libraries, led architecture, and mentored teams at
           TÜBİTAK BİLGEM YTE. Strong in scalable front-end systems and
           cross-team leadership.
         </p>
-
-        <hr className="my-8" />
-
         <section className="mb-12">
           <h2 className="mb-6 text-3xl font-bold">Work Experience</h2>
 

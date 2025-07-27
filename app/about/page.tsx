@@ -1,4 +1,25 @@
 import BrPrintButton from "@/lib/components/BrPrintButton";
+import {
+  Avatar,
+  Card,
+  CardActionArea,
+  CardContent,
+  Box,
+  Typography,
+} from "@mui/material";
+import Image from "next/image";
+import react from "@/lib/assets/react.svg";
+import nextJS from "@/lib/assets/next.svg";
+import TS from "@/lib/assets/ts.svg";
+import lit from "@/lib/assets/lit.svg";
+import {
+  Code as WebComponentIcon,
+  Css as CssIcon,
+  DesignServices as DesignIcon,
+  Groups as CommunityIcon,
+  Person as LeadershipIcon,
+  RecordVoiceOver as SpeakingIcon,
+} from "@mui/icons-material";
 
 export default function AboutPage() {
   return (
@@ -148,15 +169,513 @@ export default function AboutPage() {
 
           <div className="mb-6">
             <h3 className="mb-3 text-xl font-semibold">Hard Skills:</h3>
-            <p>
-              Web Components, Next.js, Lit, CSS3, React.js, Front-End
-              Development, TypeScript, Web Development, SASS, UI/UX
-            </p>
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: {
+                  xs: "repeat(2, 1fr)",
+                  sm: "repeat(3, 1fr)",
+                  md: "repeat(4, 1fr)",
+                },
+                gap: 2,
+              }}
+            >
+              <Card
+                component="a"
+                href="https://react.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardActionArea>
+                  <CardContent
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      py: 3,
+                    }}
+                  >
+                    <Avatar
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        mb: 2,
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      <Image
+                        src={react}
+                        alt="React Logo"
+                        width={48}
+                        height={48}
+                      />
+                    </Avatar>
+                    <Typography
+                      variant="body2"
+                      fontWeight="medium"
+                      color="text.primary"
+                    >
+                      React.js
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+
+              <Card
+                component="a"
+                href="https://nextjs.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardActionArea>
+                  <CardContent
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      py: 3,
+                    }}
+                  >
+                    <Avatar
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        mb: 2,
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      <Image
+                        src={nextJS}
+                        alt="Next.js Logo"
+                        width={48}
+                        height={48}
+                        className="dark:invert"
+                      />
+                    </Avatar>
+                    <Typography
+                      variant="body2"
+                      fontWeight="medium"
+                      color="text.primary"
+                    >
+                      Next.js
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+
+              <Card
+                component="a"
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardActionArea>
+                  <CardContent
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      py: 3,
+                    }}
+                  >
+                    <Avatar
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        mb: 2,
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      <Image
+                        src={TS}
+                        alt="TypeScript Logo"
+                        width={48}
+                        height={48}
+                      />
+                    </Avatar>
+                    <Typography
+                      variant="body2"
+                      fontWeight="medium"
+                      color="text.primary"
+                    >
+                      TypeScript
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+
+              <Card
+                component="a"
+                href="https://lit.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardActionArea>
+                  <CardContent
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      py: 3,
+                    }}
+                  >
+                    <Avatar
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        mb: 2,
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      <Image src={lit} alt="Lit Logo" width={48} height={48} />
+                    </Avatar>
+                    <Typography
+                      variant="body2"
+                      fontWeight="medium"
+                      color="text.primary"
+                    >
+                      Lit
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+
+              <Card
+                component="a"
+                href="https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardActionArea>
+                  <CardContent
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      py: 3,
+                    }}
+                  >
+                    <Avatar
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        mb: 2,
+                        backgroundColor: "primary.main",
+                        color: "primary.contrastText",
+                      }}
+                    >
+                      <WebComponentIcon />
+                    </Avatar>
+                    <Typography
+                      variant="body2"
+                      fontWeight="medium"
+                      color="text.primary"
+                    >
+                      Web Components
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+
+              <Card
+                component="a"
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardActionArea>
+                  <CardContent
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      py: 3,
+                    }}
+                  >
+                    <Avatar
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        mb: 2,
+                        backgroundColor: "#1572B6",
+                        color: "white",
+                      }}
+                    >
+                      <CssIcon />
+                    </Avatar>
+                    <Typography
+                      variant="body2"
+                      fontWeight="medium"
+                      color="text.primary"
+                    >
+                      CSS3
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+
+              <Card
+                component="a"
+                href="https://sass-lang.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  textDecoration: "none",
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardActionArea>
+                  <CardContent
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      py: 3,
+                    }}
+                  >
+                    <Avatar
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        mb: 2,
+                        backgroundColor: "#CF649A",
+                        color: "white",
+                      }}
+                    >
+                      <Typography variant="h6" fontWeight="bold">
+                        S
+                      </Typography>
+                    </Avatar>
+                    <Typography
+                      variant="body2"
+                      fontWeight="medium"
+                      color="text.primary"
+                    >
+                      SASS
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+
+              <Card
+                sx={{
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    py: 3,
+                  }}
+                >
+                  <Avatar
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      mb: 2,
+                      backgroundColor: "#9C27B0",
+                      color: "white",
+                    }}
+                  >
+                    <DesignIcon />
+                  </Avatar>
+                  <Typography
+                    variant="body2"
+                    fontWeight="medium"
+                    color="text.primary"
+                  >
+                    UI/UX
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Box>
           </div>
 
           <div className="mb-6">
             <h3 className="mb-3 text-xl font-semibold">Soft Skills:</h3>
-            <p>Community Management, Leadership, Public Speaking</p>
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: {
+                  xs: "repeat(1, 1fr)",
+                  sm: "repeat(2, 1fr)",
+                  md: "repeat(3, 1fr)",
+                },
+                gap: 2,
+              }}
+            >
+              <Card
+                sx={{
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    py: 3,
+                  }}
+                >
+                  <Avatar
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      mb: 2,
+                      backgroundColor: "#FF6F00",
+                      color: "white",
+                    }}
+                  >
+                    <CommunityIcon />
+                  </Avatar>
+                  <Typography
+                    variant="body2"
+                    fontWeight="medium"
+                    color="text.primary"
+                  >
+                    Community Management
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card
+                sx={{
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    py: 3,
+                  }}
+                >
+                  <Avatar
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      mb: 2,
+                      backgroundColor: "#2E7D32",
+                      color: "white",
+                    }}
+                  >
+                    <LeadershipIcon />
+                  </Avatar>
+                  <Typography
+                    variant="body2"
+                    fontWeight="medium"
+                    color="text.primary"
+                  >
+                    Leadership
+                  </Typography>
+                </CardContent>
+              </Card>
+
+              <Card
+                sx={{
+                  transition: "all 0.2s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: 3,
+                  },
+                }}
+              >
+                <CardContent
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    py: 3,
+                  }}
+                >
+                  <Avatar
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      mb: 2,
+                      backgroundColor: "#1976D2",
+                      color: "white",
+                    }}
+                  >
+                    <SpeakingIcon />
+                  </Avatar>
+                  <Typography
+                    variant="body2"
+                    fontWeight="medium"
+                    color="text.primary"
+                  >
+                    Public Speaking
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Box>
           </div>
         </section>
 

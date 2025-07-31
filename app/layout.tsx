@@ -31,7 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <BrTheme>
           <div className="mx-auto max-w-4xl px-4">
             <BrHeader />
-            {children}
+            <main>{children}</main>
           </div>
           <BgAnimation />
         </BrTheme>

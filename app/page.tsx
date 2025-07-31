@@ -15,7 +15,7 @@ export default function Page() {
         alt="Profile Picture"
         className="size-3/5 sm:size-1/2"
       />
-      <main className="flex flex-col gap-4 sm:gap-12">
+      <div className="flex flex-col gap-4 sm:gap-12">
         <div className="flex flex-col gap-2">
           <div className="text-md font-normal text-gray-500">
             Hey, I&apos;m a
@@ -28,7 +28,7 @@ export default function Page() {
           </p>
         </div>
         <BrTechLogos />
-      </main>
+      </div>
     </div>
   );
 }

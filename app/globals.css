@@ -11,6 +11,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* https://stackoverflow.com/q/13426875/14257078 */
+}
+
+main {
   text-shadow:
     2px 0 var(--mui-palette-background-default),
     -2px 0 var(--mui-palette-background-default),

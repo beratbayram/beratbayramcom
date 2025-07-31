@@ -94,19 +94,6 @@ export const SEO_KEYWORDS = {
       "frontend architecture",
       "development best practices",
     ],
-
-    contact: [
-      "contact Berat BAYRAM",
-      "hire frontend developer",
-      "React developer Ankara",
-      "TypeScript consultant",
-      "UI library consultant",
-      "frontend architecture consulting",
-      "micro frontend expert",
-      "remote frontend developer",
-      "React mentor",
-      "Turkish frontend developer",
-    ],
   },
 };
 

@@ -14,7 +14,7 @@ export default function CertificateItem({
       <strong>
         <a
           href={url}
-          className="text-blue-600 hover:underline"
+          className="text-black underline dark:text-white"
           target="_blank"
           rel="noopener noreferrer"
         >

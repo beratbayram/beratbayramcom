@@ -15,6 +15,21 @@ import wc from "@/lib/assets/wc.svg";
 import css from "@/lib/assets/css.svg";
 import sass from "@/lib/assets/sass.svg";
 import tailwind from "@/lib/assets/tw.svg";
+import { Metadata } from "next";
+import { getKeywords } from "@/lib/const/SEO_KEYWORDS";
+
+export const metadata: Metadata = {
+  title: "About Me - Experience, Skills & Background",
+  description:
+    "Learn about Berat BAYRAM's professional journey as a Front-End Engineer at TÜBİTAK. Explore my experience building UI libraries, leading Micro Front-End Architecture, mentoring teams, and expertise in React, Next.js, TypeScript, and Lit.",
+  keywords: getKeywords.page("about"),
+  openGraph: {
+    title: "About Berat BAYRAM - Front-End Engineer & Team Lead",
+    description:
+      "Professional journey and expertise of Berat BAYRAM, Front-End Engineer specializing in React, TypeScript, and UI architecture at TÜBİTAK.",
+    url: "https://beratbayram.com/about",
+  },
+};
 
 export default function AboutPage() {
   return (

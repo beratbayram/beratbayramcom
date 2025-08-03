@@ -1,4 +1,5 @@
 import BrPrintButton from "@/lib/components/BrPrintButton";
+import BrPdfDownloadButton from "@/lib/components/BrPdfDownloadButton";
 import Skill from "@/lib/components/Skill";
 import ExperienceItem from "@/lib/components/ExperienceItem";
 import EducationItem from "@/lib/components/EducationItem";
@@ -7,6 +8,7 @@ import Section from "@/lib/components/Section";
 import SkillsGrid from "@/lib/components/SkillsGrid";
 import PageHeader from "@/lib/components/PageHeader";
 import { Groups, Psychology, RecordVoiceOver } from "@mui/icons-material";
+import { ButtonGroup } from "@mui/material";
 import react from "@/lib/assets/react.svg";
 import nextJS from "@/lib/assets/next.svg";
 import TS from "@/lib/assets/ts.svg";
@@ -42,7 +44,14 @@ export default function AboutPage() {
           Lit. Built UI libraries, led architecture, and mentored teams at
           TÜBİTAK BİLGEM YTE. Strong in scalable front-end systems and
           cross-team leadership."
-          action={<BrPrintButton />}
+          action={
+            <div className="text-shadow-none print:hidden">
+              <ButtonGroup variant="contained" className="m-1">
+                <BrPdfDownloadButton />
+                <BrPrintButton variant="outlined" />
+              </ButtonGroup>
+            </div>
+          }
         />
         <Section title="Work Experience">
           <ExperienceItem

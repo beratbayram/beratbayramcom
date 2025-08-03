@@ -1,51 +1,56 @@
 "use client";
 
 import { Button, IconButton, useMediaQuery, useTheme } from "@mui/material";
-import PrintIcon from "@mui/icons-material/Print";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import Link from "next/link";
 
-interface BrPrintButtonProps {
+interface BrPdfDownloadButtonProps {
   className?: string;
   children?: React.ReactNode;
   variant?: "contained" | "outlined" | "text";
   size?: "small" | "medium" | "large";
+  url?: string;
 }
 
-const handlePrint = () => {
-  window.print();
-};
-
-export default function BrPrintButton({
+export default function BrPdfDownloadButton({
   className = "",
   children,
   variant = "contained",
   size = "medium",
-}: BrPrintButtonProps) {
+  url = "https://drive.google.com/file/d/1BT1g3Xc1c2V-vuZLVmRmFa1qUG4iXojP/view",
+}: BrPdfDownloadButtonProps) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   if (isMobile) {
     return (
       <IconButton
-        onClick={handlePrint}
+        component={Link}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
         className={className}
-        aria-label="Print this page"
+        aria-label="Download PDF resume"
         color={variant === "contained" ? "primary" : "default"}
       >
-        <PrintIcon />
+        <PictureAsPdfIcon />
       </IconButton>
     );
   }
 
   return (
     <Button
-      onClick={handlePrint}
+      component={Link}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       variant={variant}
       size={size}
-      startIcon={<PrintIcon />}
+      startIcon={<PictureAsPdfIcon />}
       className={className}
-      aria-label="Print this page"
+      aria-label="Download PDF resume"
     >
-      {children ?? "Print"}
+      {children ?? "Download PDF"}
     </Button>
   );
 }

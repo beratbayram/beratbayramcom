@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/private/", "/admin/", "/_next/"],
+      disallow: ["/private/"],
     },
     sitemap: "https://beratbayram.com/sitemap.xml", // Update with your actual domain
   };

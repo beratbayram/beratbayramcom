@@ -8,7 +8,6 @@ interface ProjectCardProps {
 export function ProjectCard({ repo }: ProjectCardProps) {
   const oneYearAgo = new Date();
   oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-  const isRecent = new Date(repo.updated_at) > oneYearAgo;
 
   return (
     <BrLink
@@ -23,11 +22,6 @@ export function ProjectCard({ repo }: ProjectCardProps) {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               {repo.name}
             </h3>
-            {isRecent && (
-              <span className="inline-flex items-center rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800 text-shadow-none dark:bg-green-900 dark:text-green-200">
-                Recent
-              </span>
-            )}
           </div>
 
           {repo.description && (

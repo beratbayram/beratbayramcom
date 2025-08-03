@@ -2,6 +2,7 @@ import { ProjectCard } from "@/lib/components/ProjectCard";
 import { GitHubRepo } from "@/lib/types/GitHub";
 import { Metadata } from "next";
 import { getKeywords } from "@/lib/const/SEO_KEYWORDS";
+import { PINNED } from "@/lib/const/GITHUB";
 
 export const metadata: Metadata = {
   title: "Projects - UI Libraries, Web Components & Frontend Solutions",
@@ -25,7 +26,7 @@ async function getGitHubProjects(): Promise<GitHubRepo[]> {
           Accept: "application/vnd.github.v3+json",
           "User-Agent": "beratbayram-portfolio",
         },
-        next: { revalidate: 2592000 }, // Revalidate every month (30 days)
+        next: { revalidate: 2_592_000 }, // Revalidate every month (30 days)
       },
     );
 
@@ -37,11 +38,7 @@ async function getGitHubProjects(): Promise<GitHubRepo[]> {
 
     // Filter out private repos and repos without meaningful content
     return repos.filter(
-      (repo: GitHubRepo) =>
-        !repo.private &&
-        repo.name !== "beratbayram" && // Exclude profile README repo
-        repo.description !== null &&
-        repo.description.trim() !== "",
+      (repo: GitHubRepo) => !repo.private && repo.name !== "beratbayram", // Exclude profile README repo
     );
   } catch (error) {
     console.error("Failed to fetch GitHub projects:", error);
@@ -49,87 +46,19 @@ async function getGitHubProjects(): Promise<GitHubRepo[]> {
   }
 }
 
-async function getPinnedRepositories(): Promise<string[]> {
-  try {
-    const query = `
-      query {
-        user(login: "beratbayram") {
-          pinnedItems(first: 6, types: [REPOSITORY]) {
-            nodes {
-              ... on Repository {
-                name
-              }
-            }
-          }
-        }
-      }
-    `;
-
-    const response = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "User-Agent": "beratbayram-portfolio",
-      },
-      body: JSON.stringify({ query }),
-      next: { revalidate: 2592000 }, // Revalidate every month (30 days)
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.warn(
-        "Failed to fetch pinned repositories:",
-        response.status,
-        errorText,
-        "using fallback",
-      );
-      // Fallback to hardcoded list if GraphQL fails
-      return [
-        "beratbayramcom",
-        "god-micro-frontend",
-        "dynamic-block-bricker",
-        "battleground",
-        "cataas-demo",
-        "angular-todo",
-      ];
-    }
-
-    const data = await response.json();
-    return (
-      data.data?.user?.pinnedItems?.nodes?.map(
-        (node: { name: string }) => node.name,
-      ) || []
-    );
-  } catch (error) {
-    console.error("Failed to fetch pinned repositories:", error);
-    // Fallback to hardcoded list if request fails
-    return [
-      "beratbayramcom",
-      "god-micro-frontend",
-      "dynamic-block-bricker",
-      "battleground",
-      "cataas-demo",
-      "angular-todo",
-    ];
-  }
-}
-
 export default async function ProjectsPage() {
-  const [projects, pinnedProjectNames] = await Promise.all([
-    getGitHubProjects(),
-    getPinnedRepositories(),
-  ]);
+  const projects = await getGitHubProjects();
 
   // Get pinned projects
-  const pinnedProjects = pinnedProjectNames
-    .map((name) => projects.find((project) => project.name === name))
-    .filter(Boolean) as GitHubRepo[];
+  const pinnedProjects = PINNED.map((name) =>
+    projects.find((project) => project.name === name),
+  ).filter(Boolean) as GitHubRepo[];
 
   // Separate featured projects (more recent and with more engagement, excluding pinned)
   const featuredProjects = projects
     .filter(
       (project) =>
-        !pinnedProjectNames.includes(project.name) &&
+        !PINNED.includes(project.name) &&
         (new Date(project.updated_at) > new Date("2024-01-01") ||
           project.stargazers_count > 0 ||
           project.forks_count > 0),
@@ -138,8 +67,7 @@ export default async function ProjectsPage() {
 
   const otherProjects = projects.filter(
     (project) =>
-      !pinnedProjectNames.includes(project.name) &&
-      !featuredProjects.includes(project),
+      !PINNED.includes(project.name) && !featuredProjects.includes(project),
   );
 
   return (

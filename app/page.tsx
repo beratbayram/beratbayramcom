@@ -1,5 +1,5 @@
 import Image from "next/image";
-import pp from "@/lib/assets/pp.png";
+import pp from "@/lib/assets/pp.webp";
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { getKeywords } from "@/lib/const/SEO_KEYWORDS";

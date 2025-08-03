@@ -71,7 +71,7 @@ export default async function ProjectsPage() {
   );
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12">
+    <div className="py-12">
       <div className="mb-12">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-gray-100">
           Projects

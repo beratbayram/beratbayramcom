@@ -24,11 +24,11 @@ export function ProjectCard({ repo }: ProjectCardProps) {
             </h3>
           </div>
 
-          {repo.description && (
-            <p className="mb-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-              {repo.description}
+          <div className="mb-3 h-[5rem] overflow-hidden">
+            <p className="line-clamp-3 text-sm leading-relaxed text-ellipsis text-gray-600 dark:text-gray-400">
+              {repo.description || "No description available."}
             </p>
-          )}
+          </div>
 
           <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
             {repo.language && (

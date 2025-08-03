@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="flex flex-col items-center justify-between gap-2 pt-10 sm:flex-row-reverse">
+    <div className="flex flex-col items-center justify-between gap-2 py-12 pt-10 sm:flex-row-reverse">
       <Image
         src={pp}
         priority

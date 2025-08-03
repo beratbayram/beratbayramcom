@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-12">
+    <div className="py-12">
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <PageHeader
           title="About Me"

@@ -25,7 +25,7 @@ export default function Skill({
         {icon && (
           <Image
             src={icon}
-            alt={iconAlt || `${name} Logo`}
+            alt={iconAlt ?? `${name} Logo`}
             height={48}
             width={48}
             className={`size-[48px] ${iconClassName}`}

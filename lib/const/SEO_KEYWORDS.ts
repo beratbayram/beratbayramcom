@@ -111,7 +111,7 @@ export const getKeywords = {
 
   // Get page-specific keywords
   page: (pageName: keyof typeof SEO_KEYWORDS.pages) =>
-    SEO_KEYWORDS.pages[pageName] || SEO_KEYWORDS.pages.home,
+    SEO_KEYWORDS.pages[pageName] ?? SEO_KEYWORDS.pages.home,
 
   // Get keywords for specific contexts
   technical: () => SEO_KEYWORDS.technical,

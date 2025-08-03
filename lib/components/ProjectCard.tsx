@@ -26,7 +26,7 @@ export function ProjectCard({ repo }: ProjectCardProps) {
 
           <div className="mb-3 h-[5rem] overflow-hidden">
             <p className="line-clamp-3 text-sm leading-relaxed text-ellipsis text-gray-600 dark:text-gray-400">
-              {repo.description || "No description available."}
+              {repo.description ?? "No description available."}
             </p>
           </div>
 
@@ -93,5 +93,5 @@ function getLanguageColor(language: string): string {
     Yacc: "#4B6C4B",
     Shell: "#89e051",
   };
-  return colors[language] || "#6b7280";
+  return colors[language] ?? "#6b7280";
 }

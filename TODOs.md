@@ -1,6 +1,7 @@
 # Portfolio Improvement TODOs
 
 - [ ] use NEXT_PUBLIC_BASE_URL
+- [ ] [Google Webmaster Enhancements Guide](https://support.google.com/webmasters/answer/9012289#enhancements&zippy=%2Cenhancements-amp-rich-results)
 
 ## Complete Blog Section
 

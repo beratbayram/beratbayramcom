@@ -26,7 +26,7 @@ async function getGitHubProjects(): Promise<GitHubRepo[]> {
           Accept: "application/vnd.github.v3+json",
           "User-Agent": "beratbayram-portfolio",
         },
-        next: { revalidate: 2_592_000 }, // Revalidate every month (30 days)
+        next: { revalidate: 2_592_000 }, // Revalidate every 30 days
       },
     );
 

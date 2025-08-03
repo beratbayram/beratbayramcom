@@ -6,9 +6,6 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ repo }: ProjectCardProps) {
-  const oneYearAgo = new Date();
-  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-
   return (
     <BrLink
       href={repo.html_url}

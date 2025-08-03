@@ -1,12 +1,14 @@
 import BgAnimation from "@/lib/components/BgAnimation";
 import { BrHeader } from "@/lib/components/BrHeader";
 import { BrTheme } from "@/lib/components/BrTheme";
+import { SkipToMain } from "@/lib/components/SkipToMain";
 import { StructuredData } from "@/lib/components/StructuredData";
 import { METADATA } from "@/lib/const/METADATA";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { Roboto } from "next/font/google";
 import { ReactNode } from "react";
 import "./globals.css";
+import Head from "next/head";
 
 export const metadata = METADATA;
 
@@ -39,15 +41,18 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={roboto.variable} suppressHydrationWarning>
-      <head>
+      <Head>
         <StructuredData />
-      </head>
+      </Head>
       <body>
         <InitColorSchemeScript attribute="class" />
+        <SkipToMain />
         <BrTheme>
           <div className="mx-auto max-w-4xl px-4">
             <BrHeader />
-            <main>{children}</main>
+            <main id="main-content" tabIndex={-1}>
+              {children}
+            </main>
           </div>
           <BgAnimation />
         </BrTheme>

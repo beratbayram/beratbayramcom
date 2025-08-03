@@ -25,7 +25,7 @@ const LOGOS = Object.entries({
     <Image
       src={src}
       alt={`${key.charAt(0).toUpperCase() + key.slice(1)} Logo`}
-      className={`h-auto ${classes} max-[60px]`}
+      className={`h-auto ${classes}`}
       height={60}
     />
   </BrLink>

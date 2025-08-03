@@ -245,7 +245,7 @@ export default function AboutPage() {
               url="https://drive.google.com/file/d/1S2ULACiSMlkPKGD5I3kzEkKX7ePJlDJn/view?usp=sharing"
             />
             <CertificateItem
-              title="DSC lead - Certificate of Completition"
+              title="DSC lead - Certificate of Completion"
               issuer="Google Developers"
               url="https://drive.google.com/file/d/1jmDVpTuzAzyKNQ0HYkFK2NFRyf6yOtUs/view?usp=sharing"
             />

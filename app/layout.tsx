@@ -8,7 +8,6 @@ import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { Roboto } from "next/font/google";
 import { ReactNode } from "react";
 import "./globals.css";
-import Head from "next/head";
 
 export const metadata = METADATA;
 
@@ -41,11 +40,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={roboto.variable} suppressHydrationWarning>
-      <Head>
-        <StructuredData />
-      </Head>
       <body>
         <InitColorSchemeScript attribute="class" />
+        <StructuredData />
         <SkipToMain />
         <BrTheme>
           <div className="mx-auto max-w-4xl px-4">

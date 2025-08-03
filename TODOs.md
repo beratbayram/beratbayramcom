@@ -1,5 +1,7 @@
 # Portfolio Improvement TODOs
 
+- [ ] use NEXT_PUBLIC_BASE_URL
+
 ## Complete Blog Section
 
 - [ ] **Replace WIP component with actual blog posts** - Currently showing placeholder, add MDX support for writing technical articles

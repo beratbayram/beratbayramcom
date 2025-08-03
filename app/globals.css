@@ -31,7 +31,6 @@ main {
 *::before,
 *::after {
   box-sizing: border-box;
-  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: no-preference) {

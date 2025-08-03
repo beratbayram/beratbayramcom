@@ -33,6 +33,12 @@ export const metadata: Metadata = {
   },
 };
 
+const ICON_SX = {
+  fontSize: 48,
+  mb: 2,
+  color: "primary.main",
+};
+
 export default function AboutPage() {
   return (
     <div className="py-12">
@@ -58,7 +64,7 @@ export default function AboutPage() {
             title="Frontend Web Developer"
             company="TUBITAK BILGEM YTE"
             location="Ankara"
-            period="Jul 2022 – Present"
+            period="Jul 2022 - Present"
             description={[
               "Developed a React UI library and Web Components library using Lit and Typescript and used in multiple projects",
               "Orchestrated a custom Micro Front-End Architecture",
@@ -72,7 +78,7 @@ export default function AboutPage() {
             title="Part-Time Front-End Web Developer"
             company="TUBITAK BILGEM YTE"
             location="Cankaya, Ankara, Turkey"
-            period="Jan 2022 – Jul 2022"
+            period="Jan 2022 - Jul 2022"
             description={[
               "Worked as a Front-End Developer specializing in CSS design with SASS",
             ]}
@@ -82,7 +88,7 @@ export default function AboutPage() {
             title="Part-Time Software Support Intern & Engineer"
             company="P.I. Works, Inc."
             location="Istanbul, Turkey"
-            period="Jul 2021 – Jan 2022"
+            period="Jul 2021 - Jan 2022"
             description={[
               "Maintained in-house data processing pipelines",
               "Worked in a multi-language environment",
@@ -93,7 +99,7 @@ export default function AboutPage() {
           <ExperienceItem
             title="Front-end Web Development Intern"
             company="Perwatch"
-            period="Jan 2021 – Jul 2021"
+            period="Jan 2021 - Jul 2021"
             description={[
               "Single-handedly developed a front-end application using React, Electron, and Sass",
             ]}
@@ -104,14 +110,14 @@ export default function AboutPage() {
           <ExperienceItem
             title="Co-Lead & Designer"
             company="YAZGİT - Yapay Zeka ve Görüntü İşleme Topluluğu"
-            period="Sep 2019 – Present"
+            period="Sep 2019 - Present"
             url="https://instagram.com/au_yazgit/"
           />
 
           <ExperienceItem
             title="Google Developer Student Clubs Lead & Founder"
             company="Google"
-            period="Nov 2019 – Aug 2020"
+            period="Nov 2019 - Aug 2020"
             url="https://x.com/dscankarauni"
           />
         </Section>
@@ -182,41 +188,14 @@ export default function AboutPage() {
           >
             <Skill
               name="Community Management"
-              muiIcon={
-                <Groups
-                  sx={{
-                    fontSize: 48,
-                    mb: 2,
-                    color: "primary.main",
-                  }}
-                />
-              }
+              muiIcon={<Groups sx={ICON_SX} />}
             />
 
-            <Skill
-              name="Leadership"
-              muiIcon={
-                <Psychology
-                  sx={{
-                    fontSize: 48,
-                    mb: 2,
-                    color: "primary.main",
-                  }}
-                />
-              }
-            />
+            <Skill name="Leadership" muiIcon={<Psychology sx={ICON_SX} />} />
 
             <Skill
               name="Public Speaking"
-              muiIcon={
-                <RecordVoiceOver
-                  sx={{
-                    fontSize: 48,
-                    mb: 2,
-                    color: "primary.main",
-                  }}
-                />
-              }
+              muiIcon={<RecordVoiceOver sx={ICON_SX} />}
             />
           </SkillsGrid>
         </Section>
@@ -225,14 +204,14 @@ export default function AboutPage() {
           <EducationItem
             institution="Ankara University"
             degree="Bachelor's Degree @ Computer Engineering"
-            period="Jan 2017 – Jan 2022"
+            period="Jan 2017 - Jan 2022"
             gpa={3.69}
           />
 
           <EducationItem
             institution="University of Eastern Finland"
             degree="Erasmus+ @ Computer Science"
-            period="Jan 2021 – Jan 2021"
+            period="Jan 2021 - Jan 2021"
           />
         </Section>
 

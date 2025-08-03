@@ -21,7 +21,7 @@ const PATHS = Array.from({ length: 36 }, (_, i) => ({
 
 export function BgAnimation() {
   return (
-    <div className="pointer-events-none fixed bottom-0 left-0 z-[-1] flex min-h-screen w-full items-center justify-center overflow-hidden print:hidden">
+    <div className="pointer-events-none fixed bottom-0 left-0 z-[-1] flex w-full items-center justify-center overflow-hidden opacity-50 print:hidden">
       <svg
         className="h-[100vh] translate-y-[200px] text-black dark:text-white"
         viewBox="0 0 696 316"

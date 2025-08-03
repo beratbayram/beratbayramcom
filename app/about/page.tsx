@@ -1,820 +1,261 @@
 import BrPrintButton from "@/lib/components/BrPrintButton";
-import {
-  Avatar,
-  Card,
-  CardActionArea,
-  CardContent,
-  Box,
-  Typography,
-} from "@mui/material";
-import Image from "next/image";
+import BrPdfDownloadButton from "@/lib/components/BrPdfDownloadButton";
+import Skill from "@/lib/components/Skill";
+import ExperienceItem from "@/lib/components/ExperienceItem";
+import EducationItem from "@/lib/components/EducationItem";
+import CertificateItem from "@/lib/components/CertificateItem";
+import Section from "@/lib/components/Section";
+import SkillsGrid from "@/lib/components/SkillsGrid";
+import PageHeader from "@/lib/components/PageHeader";
+import { Groups, Psychology, RecordVoiceOver } from "@mui/icons-material";
+import { ButtonGroup } from "@mui/material";
 import react from "@/lib/assets/react.svg";
 import nextJS from "@/lib/assets/next.svg";
 import TS from "@/lib/assets/ts.svg";
 import lit from "@/lib/assets/lit.svg";
-import {
-  Code as WebComponentIcon,
-  Css as CssIcon,
-  DesignServices as DesignIcon,
-  Groups as CommunityIcon,
-  Person as LeadershipIcon,
-  RecordVoiceOver as SpeakingIcon,
-} from "@mui/icons-material";
+import wc from "@/lib/assets/wc.svg";
+import css from "@/lib/assets/css.svg";
+import sass from "@/lib/assets/sass.svg";
+import tailwind from "@/lib/assets/tw.svg";
+import { Metadata } from "next";
+import { getKeywords } from "@/lib/const/SEO_KEYWORDS";
+
+export const metadata: Metadata = {
+  title: "About Me - Experience, Skills & Background",
+  description:
+    "Learn about Berat BAYRAM's professional journey as a Front-End Engineer at TÜBİTAK. Explore my experience building UI libraries, leading Micro Front-End Architecture, mentoring teams, and expertise in React, Next.js, TypeScript, and Lit.",
+  keywords: getKeywords.page("about"),
+  openGraph: {
+    title: "About Berat BAYRAM - Front-End Engineer & Team Lead",
+    description:
+      "Professional journey and expertise of Berat BAYRAM, Front-End Engineer specializing in React, TypeScript, and UI architecture at TÜBİTAK.",
+    url: "https://beratbayram.com/about",
+  },
+};
+
+const ICON_SX = {
+  fontSize: 48,
+  mb: 2,
+  color: "primary.main",
+};
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-2xl px-4 py-12">
+    <div className="py-12">
       <div className="prose prose-lg dark:prose-invert max-w-none">
-        <div className="mb-8 flex items-center justify-between">
-          <div>
-            <h1 className="text-4xl font-bold print:hidden">About Me</h1>
-            <h1 className="hidden text-4xl font-bold print:block">
-              Berat BAYRAM
-            </h1>
-          </div>
-          <BrPrintButton />
-        </div>
-
-        <p className="mb-8">
-          Front-End Engineer with expertise in React, Next.js, TypeScript, and
+        <PageHeader
+          title="About Me"
+          printTitle="Berat BAYRAM"
+          description="Front-End Engineer with expertise in React, Next.js, TypeScript, and
           Lit. Built UI libraries, led architecture, and mentored teams at
           TÜBİTAK BİLGEM YTE. Strong in scalable front-end systems and
-          cross-team leadership.
-        </p>
-        <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold">Work Experience</h2>
+          cross-team leadership."
+          action={
+            <div className="text-shadow-none print:hidden">
+              <ButtonGroup variant="contained" className="m-1">
+                <BrPdfDownloadButton />
+                <BrPrintButton variant="outlined" />
+              </ButtonGroup>
+            </div>
+          }
+        />
+        <Section title="Work Experience">
+          <ExperienceItem
+            title="Frontend Web Developer"
+            company="TUBITAK BILGEM YTE"
+            location="Ankara"
+            period="Jul 2022 - Present"
+            description={[
+              "Developed a React UI library and Web Components library using Lit and Typescript and used in multiple projects",
+              "Orchestrated a custom Micro Front-End Architecture",
+              "Developed using Next.js",
+              "Gave company-wide lectures",
+              "Mentored 2 generations of interns",
+            ]}
+          />
 
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold">Frontend Web Developer</h3>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <strong>TUBITAK BILGEM YTE | Ankara</strong>
-            </p>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
-              <strong>Jul 2022 – Present</strong>
-            </p>
-            <ul className="list-inside list-disc space-y-2">
-              <li>
-                Developed a React UI library and Web Components library using
-                Lit and Typescript and used in multiple projects
-              </li>
-              <li>Orchestrated a custom Micro Front-End Architecture</li>
-              <li>Developed using Next.js</li>
-              <li>Gave company-wide lectures</li>
-              <li>Mentored 2 generations of interns</li>
-            </ul>
-          </div>
+          <ExperienceItem
+            title="Part-Time Front-End Web Developer"
+            company="TUBITAK BILGEM YTE"
+            location="Cankaya, Ankara, Turkey"
+            period="Jan 2022 - Jul 2022"
+            description={[
+              "Worked as a Front-End Developer specializing in CSS design with SASS",
+            ]}
+          />
 
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold">
-              Part-Time Front-End Web Developer
-            </h3>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <strong>TUBITAK BILGEM YTE | Cankaya, Ankara, Turkey</strong>
-            </p>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
-              <strong>Jan 2022 – Jul 2022</strong>
-            </p>
-            <ul className="list-inside list-disc">
-              <li>
-                Worked as a Front-End Developer specializing in CSS design with
-                SASS
-              </li>
-            </ul>
-          </div>
+          <ExperienceItem
+            title="Part-Time Software Support Intern & Engineer"
+            company="P.I. Works, Inc."
+            location="Istanbul, Turkey"
+            period="Jul 2021 - Jan 2022"
+            description={[
+              "Maintained in-house data processing pipelines",
+              "Worked in a multi-language environment",
+              "Handled customer issues",
+            ]}
+          />
 
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold">
-              Part-Time Software Support Intern & Engineer
-            </h3>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <strong>P.I. Works, Inc. | Istanbul, Turkey</strong>
-            </p>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
-              <strong>Jul 2021 – Jan 2022</strong>
-            </p>
-            <ul className="list-inside list-disc space-y-2">
-              <li>Maintained in-house data processing pipelines</li>
-              <li>Worked in a multi-language environment</li>
-              <li>Handled customer issues</li>
-            </ul>
-          </div>
+          <ExperienceItem
+            title="Front-end Web Development Intern"
+            company="Perwatch"
+            period="Jan 2021 - Jul 2021"
+            description={[
+              "Single-handedly developed a front-end application using React, Electron, and Sass",
+            ]}
+          />
+        </Section>
 
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold">
-              Front-end Web Development Intern
-            </h3>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <strong>Perwatch</strong>
-            </p>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
-              <strong>Jan 2021 – Jul 2021</strong>
-            </p>
-            <ul className="list-inside list-disc">
-              <li>
-                Single-handedly developed a front-end application using React,
-                Electron, and Sass
-              </li>
-            </ul>
-          </div>
-        </section>
+        <Section title="Volunteer Experience">
+          <ExperienceItem
+            title="Co-Lead & Designer"
+            company="YAZGİT - Yapay Zeka ve Görüntü İşleme Topluluğu"
+            period="Sep 2019 - Present"
+            url="https://instagram.com/au_yazgit/"
+          />
 
-        <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold">Volunteer Experience</h2>
+          <ExperienceItem
+            title="Google Developer Student Clubs Lead & Founder"
+            company="Google"
+            period="Nov 2019 - Aug 2020"
+            url="https://x.com/dscankarauni"
+          />
+        </Section>
 
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold">Co-Lead & Designer</h3>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <strong>YAZGİT - Yapay Zeka ve Görüntü İşleme Topluluğu</strong>
-            </p>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <a
-                href="https://instagram.com/au_yazgit/"
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                instagram.com/au_yazgit/
-              </a>
-            </p>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
-              <strong>Sep 2019 – Present</strong>
-            </p>
-          </div>
+        <Section title="Core Skills">
+          <SkillsGrid title="Hard Skills:">
+            <Skill
+              name="React.js"
+              href="https://react.dev/"
+              icon={react}
+              iconAlt="React Logo"
+            />
 
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold">
-              Google Developer Student Clubs Lead & Founder
-            </h3>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <strong>Google</strong>
-            </p>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <a
-                href="https://x.com/dscankarauni"
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                x.com/dscankarauni
-              </a>
-            </p>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
-              <strong>Nov 2019 – Aug 2020</strong>
-            </p>
-          </div>
-        </section>
+            <Skill
+              name="Next.js"
+              href="https://nextjs.org/"
+              icon={nextJS}
+              iconAlt="Next.js Logo"
+              iconClassName="dark:invert"
+            />
 
-        <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold">Core Skills</h2>
+            <Skill
+              name="TypeScript"
+              href="https://www.typescriptlang.org/"
+              icon={TS}
+              iconAlt="TypeScript Logo"
+            />
 
-          <div className="mb-6">
-            <h3 className="mb-3 text-xl font-semibold">Hard Skills:</h3>
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: {
-                  xs: "repeat(2, 1fr)",
-                  sm: "repeat(3, 1fr)",
-                  md: "repeat(4, 1fr)",
-                },
-                gap: 2,
-              }}
-            >
-              <Card
-                component="a"
-                href="https://react.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  textDecoration: "none",
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardActionArea>
-                  <CardContent
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      py: 3,
-                    }}
-                  >
-                    <Avatar
-                      sx={{
-                        width: 48,
-                        height: 48,
-                        mb: 2,
-                        backgroundColor: "transparent",
-                      }}
-                    >
-                      <Image
-                        src={react}
-                        alt="React Logo"
-                        width={48}
-                        height={48}
-                      />
-                    </Avatar>
-                    <Typography
-                      variant="body2"
-                      fontWeight="medium"
-                      color="text.primary"
-                    >
-                      React.js
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+            <Skill
+              name="Lit"
+              href="https://lit.dev/"
+              icon={lit}
+              iconAlt="Lit Logo"
+            />
 
-              <Card
-                component="a"
-                href="https://nextjs.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  textDecoration: "none",
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardActionArea>
-                  <CardContent
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      py: 3,
-                    }}
-                  >
-                    <Avatar
-                      sx={{
-                        width: 48,
-                        height: 48,
-                        mb: 2,
-                        backgroundColor: "transparent",
-                      }}
-                    >
-                      <Image
-                        src={nextJS}
-                        alt="Next.js Logo"
-                        width={48}
-                        height={48}
-                        className="dark:invert"
-                      />
-                    </Avatar>
-                    <Typography
-                      variant="body2"
-                      fontWeight="medium"
-                      color="text.primary"
-                    >
-                      Next.js
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+            <Skill
+              name="Web Components"
+              href="https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+              icon={wc}
+              iconAlt="Web Components Logo"
+            />
 
-              <Card
-                component="a"
-                href="https://www.typescriptlang.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  textDecoration: "none",
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardActionArea>
-                  <CardContent
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      py: 3,
-                    }}
-                  >
-                    <Avatar
-                      sx={{
-                        width: 48,
-                        height: 48,
-                        mb: 2,
-                        backgroundColor: "transparent",
-                      }}
-                    >
-                      <Image
-                        src={TS}
-                        alt="TypeScript Logo"
-                        width={48}
-                        height={48}
-                      />
-                    </Avatar>
-                    <Typography
-                      variant="body2"
-                      fontWeight="medium"
-                      color="text.primary"
-                    >
-                      TypeScript
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+            <Skill
+              name="CSS3"
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+              icon={css}
+              iconAlt="CSS3 Logo"
+            />
 
-              <Card
-                component="a"
-                href="https://lit.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  textDecoration: "none",
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardActionArea>
-                  <CardContent
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      py: 3,
-                    }}
-                  >
-                    <Avatar
-                      sx={{
-                        width: 48,
-                        height: 48,
-                        mb: 2,
-                        backgroundColor: "transparent",
-                      }}
-                    >
-                      <Image src={lit} alt="Lit Logo" width={48} height={48} />
-                    </Avatar>
-                    <Typography
-                      variant="body2"
-                      fontWeight="medium"
-                      color="text.primary"
-                    >
-                      Lit
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+            <Skill
+              name="SASS"
+              href="https://sass-lang.com/"
+              icon={sass}
+              iconAlt="SASS Logo"
+            />
 
-              <Card
-                component="a"
-                href="https://developer.mozilla.org/en-US/docs/Web/Web_Components"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  textDecoration: "none",
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardActionArea>
-                  <CardContent
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      py: 3,
-                    }}
-                  >
-                    <Avatar
-                      sx={{
-                        width: 48,
-                        height: 48,
-                        mb: 2,
-                        backgroundColor: "primary.main",
-                        color: "primary.contrastText",
-                      }}
-                    >
-                      <WebComponentIcon />
-                    </Avatar>
-                    <Typography
-                      variant="body2"
-                      fontWeight="medium"
-                      color="text.primary"
-                    >
-                      Web Components
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+            <Skill
+              name="Tailwind CSS"
+              href="https://tailwindcss.com/"
+              icon={tailwind}
+              iconAlt="Tailwind CSS Logo"
+            />
+          </SkillsGrid>
 
-              <Card
-                component="a"
-                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  textDecoration: "none",
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardActionArea>
-                  <CardContent
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      py: 3,
-                    }}
-                  >
-                    <Avatar
-                      sx={{
-                        width: 48,
-                        height: 48,
-                        mb: 2,
-                        backgroundColor: "#1572B6",
-                        color: "white",
-                      }}
-                    >
-                      <CssIcon />
-                    </Avatar>
-                    <Typography
-                      variant="body2"
-                      fontWeight="medium"
-                      color="text.primary"
-                    >
-                      CSS3
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+          <SkillsGrid
+            title="Soft Skills:"
+            gridCols="grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+          >
+            <Skill
+              name="Community Management"
+              muiIcon={<Groups sx={ICON_SX} />}
+            />
 
-              <Card
-                component="a"
-                href="https://sass-lang.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  textDecoration: "none",
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardActionArea>
-                  <CardContent
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      py: 3,
-                    }}
-                  >
-                    <Avatar
-                      sx={{
-                        width: 48,
-                        height: 48,
-                        mb: 2,
-                        backgroundColor: "#CF649A",
-                        color: "white",
-                      }}
-                    >
-                      <Typography variant="h6" fontWeight="bold">
-                        S
-                      </Typography>
-                    </Avatar>
-                    <Typography
-                      variant="body2"
-                      fontWeight="medium"
-                      color="text.primary"
-                    >
-                      SASS
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+            <Skill name="Leadership" muiIcon={<Psychology sx={ICON_SX} />} />
 
-              <Card
-                sx={{
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    py: 3,
-                  }}
-                >
-                  <Avatar
-                    sx={{
-                      width: 48,
-                      height: 48,
-                      mb: 2,
-                      backgroundColor: "#9C27B0",
-                      color: "white",
-                    }}
-                  >
-                    <DesignIcon />
-                  </Avatar>
-                  <Typography
-                    variant="body2"
-                    fontWeight="medium"
-                    color="text.primary"
-                  >
-                    UI/UX
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Box>
-          </div>
+            <Skill
+              name="Public Speaking"
+              muiIcon={<RecordVoiceOver sx={ICON_SX} />}
+            />
+          </SkillsGrid>
+        </Section>
 
-          <div className="mb-6">
-            <h3 className="mb-3 text-xl font-semibold">Soft Skills:</h3>
-            <Box
-              sx={{
-                display: "grid",
-                gridTemplateColumns: {
-                  xs: "repeat(1, 1fr)",
-                  sm: "repeat(2, 1fr)",
-                  md: "repeat(3, 1fr)",
-                },
-                gap: 2,
-              }}
-            >
-              <Card
-                sx={{
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    py: 3,
-                  }}
-                >
-                  <Avatar
-                    sx={{
-                      width: 48,
-                      height: 48,
-                      mb: 2,
-                      backgroundColor: "#FF6F00",
-                      color: "white",
-                    }}
-                  >
-                    <CommunityIcon />
-                  </Avatar>
-                  <Typography
-                    variant="body2"
-                    fontWeight="medium"
-                    color="text.primary"
-                  >
-                    Community Management
-                  </Typography>
-                </CardContent>
-              </Card>
+        <Section title="Education">
+          <EducationItem
+            institution="Ankara University"
+            degree="Bachelor's Degree @ Computer Engineering"
+            period="Jan 2017 - Jan 2022"
+            gpa={3.69}
+          />
 
-              <Card
-                sx={{
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    py: 3,
-                  }}
-                >
-                  <Avatar
-                    sx={{
-                      width: 48,
-                      height: 48,
-                      mb: 2,
-                      backgroundColor: "#2E7D32",
-                      color: "white",
-                    }}
-                  >
-                    <LeadershipIcon />
-                  </Avatar>
-                  <Typography
-                    variant="body2"
-                    fontWeight="medium"
-                    color="text.primary"
-                  >
-                    Leadership
-                  </Typography>
-                </CardContent>
-              </Card>
+          <EducationItem
+            institution="University of Eastern Finland"
+            degree="Erasmus+ @ Computer Science"
+            period="Jan 2021 - Jan 2021"
+          />
+        </Section>
 
-              <Card
-                sx={{
-                  transition: "all 0.2s ease-in-out",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: 3,
-                  },
-                }}
-              >
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    py: 3,
-                  }}
-                >
-                  <Avatar
-                    sx={{
-                      width: 48,
-                      height: 48,
-                      mb: 2,
-                      backgroundColor: "#1976D2",
-                      color: "white",
-                    }}
-                  >
-                    <SpeakingIcon />
-                  </Avatar>
-                  <Typography
-                    variant="body2"
-                    fontWeight="medium"
-                    color="text.primary"
-                  >
-                    Public Speaking
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Box>
-          </div>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold">Education</h2>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold">Ankara University</h3>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              Bachelor&apos;s degree Computer Engineering
-            </p>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              <strong>GPA:</strong> 3.69
-            </p>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
-              <strong>Jan 2017 – Jan 2022</strong>
-            </p>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold">
-              University of Eastern Finland
-            </h3>
-            <p className="mb-2 text-gray-600 dark:text-gray-400">
-              Erasmus+ Computer Science
-            </p>
-            <p className="mb-4 text-gray-600 dark:text-gray-400">
-              <strong>Jan 2021 – Jan 2021</strong>
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold">Languages</h2>
+        <Section title="Languages">
           <ul className="list-inside list-disc space-y-2">
             <li>English (PROFESSIONAL_WORKING)</li>
             <li>Turkish (NATIVE_OR_BILINGUAL)</li>
           </ul>
-        </section>
+        </Section>
 
-        <section className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold">Certificates</h2>
+        <Section title="Certificates">
           <ul className="list-inside list-disc space-y-4">
-            <li>
-              <strong>
-                <a
-                  href="https://credential.certifyme.online/verify/2943f37414373"
-                  className="text-blue-600 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Effective Presentation Techniques
-                </a>
-              </strong>
-              <br />
-              <em className="text-gray-600 dark:text-gray-400">
-                ANR Business Development Academy
-              </em>
-            </li>
-            <li>
-              <strong>
-                <a
-                  href="https://drive.google.com/file/d/1k5FNs10I7qrssCZp_eOu1T7JHEiMb7Bj/view?usp=sharing"
-                  className="text-blue-600 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  UX/UI Design
-                </a>
-              </strong>
-              <br />
-              <em className="text-gray-600 dark:text-gray-400">
-                Bahcesehir University
-              </em>
-            </li>
-            <li>
-              <strong>
-                <a
-                  href="https://www.coursera.org/account/accomplishments/certificate/6ABVVAPEQK7A"
-                  className="text-blue-600 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Introduction to Front-End Development
-                </a>
-              </strong>
-              <br />
-              <em className="text-gray-600 dark:text-gray-400">Meta</em>
-            </li>
-            <li>
-              <strong>
-                <a
-                  href="https://drive.google.com/file/d/1S2ULACiSMlkPKGD5I3kzEkKX7ePJlDJn/view?usp=sharing"
-                  className="text-blue-600 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Erasmus Certificate of Achievement
-                </a>
-              </strong>
-              <br />
-              <em className="text-gray-600 dark:text-gray-400">
-                Ankara University
-              </em>
-            </li>
-            <li>
-              <strong>
-                <a
-                  href="https://drive.google.com/file/d/1jmDVpTuzAzyKNQ0HYkFK2NFRyf6yOtUs/view?usp=sharing"
-                  className="text-blue-600 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  DSC lead - Certificate of Completition
-                </a>
-              </strong>
-              <br />
-              <em className="text-gray-600 dark:text-gray-400">
-                Google Developers
-              </em>
-            </li>
-            <li>
-              <strong>
-                <a
-                  href="https://drive.google.com/file/d/1ptEhnUJvYpNb60HxtXeqjow-BacdsO0O/"
-                  className="text-blue-600 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CCNA Routing and Switching: Introduction to Networks
-                </a>
-              </strong>
-              <br />
-              <em className="text-gray-600 dark:text-gray-400">
-                Cisco Networking Academy
-              </em>
-            </li>
+            <CertificateItem
+              title="Effective Presentation Techniques"
+              issuer="ANR Business Development Academy"
+              url="https://credential.certifyme.online/verify/2943f37414373"
+            />
+            <CertificateItem
+              title="UX/UI Design"
+              issuer="Bahcesehir University"
+              url="https://drive.google.com/file/d/1k5FNs10I7qrssCZp_eOu1T7JHEiMb7Bj/view?usp=sharing"
+            />
+            <CertificateItem
+              title="Introduction to Front-End Development"
+              issuer="Meta"
+              url="https://www.coursera.org/account/accomplishments/certificate/6ABVVAPEQK7A"
+            />
+            <CertificateItem
+              title="Erasmus Certificate of Achievement"
+              issuer="Ankara University"
+              url="https://drive.google.com/file/d/1S2ULACiSMlkPKGD5I3kzEkKX7ePJlDJn/view?usp=sharing"
+            />
+            <CertificateItem
+              title="DSC lead - Certificate of Completion"
+              issuer="Google Developers"
+              url="https://drive.google.com/file/d/1jmDVpTuzAzyKNQ0HYkFK2NFRyf6yOtUs/view?usp=sharing"
+            />
+            <CertificateItem
+              title="CCNA Routing and Switching: Introduction to Networks"
+              issuer="Cisco Networking Academy"
+              url="https://drive.google.com/file/d/1ptEhnUJvYpNb60HxtXeqjow-BacdsO0O/"
+            />
           </ul>
-        </section>
+        </Section>
       </div>
     </div>
   );

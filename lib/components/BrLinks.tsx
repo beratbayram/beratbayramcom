@@ -9,7 +9,6 @@ const LINKS = [
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
 ];
 
 interface BrLinksProps {
@@ -27,6 +26,19 @@ export function BrLinks({ orientation }: BrLinksProps) {
       aria-label="tabs"
       orientation={orientation}
       variant={variant}
+      sx={{
+        "& .MuiTab-root": {
+          transition: "all 0.3s ease",
+          "&:hover": {
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
+            color: "primary.main",
+            transform: "translateY(-1px)",
+          },
+          "&:hover:not(.Mui-selected)": {
+            opacity: 0.6,
+          },
+        },
+      }}
     >
       <Tab
         value={"/"}
@@ -46,6 +58,4 @@ export function BrLinks({ orientation }: BrLinksProps) {
       ))}
     </Tabs>
   );
-
-  return;
 }

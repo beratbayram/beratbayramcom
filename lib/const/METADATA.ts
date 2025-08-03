@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getKeywords } from "./SEO_KEYWORDS";
 
-const siteUrl = "https://beratbayram.com"; // Update with your actual domain
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://beratbayram.com";
 
 export const METADATA: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Connect tw to mui theming */
+@custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --breakpoint-xs: 400px;
 }

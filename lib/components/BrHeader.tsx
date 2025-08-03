@@ -1,6 +1,8 @@
-import { BrLinks } from "./BrLinks";
+import { Divider } from "@mui/material";
 import { BrHeaderMobile } from "./BrHeaderMobile";
+import { BrLinks } from "./BrLinks";
 import { BrSocials } from "./BrSocials";
+import { BrThemeSwitcher } from "./BrThemeSwitcher";
 
 export function BrHeader() {
   return (
@@ -13,7 +15,11 @@ export function BrHeader() {
           <BrLinks />
         </div>
       </nav>
-      <BrSocials />
+      <div className="flex items-center gap-2">
+        <BrThemeSwitcher />
+        <Divider orientation="vertical" flexItem />
+        <BrSocials />
+      </div>
     </header>
   );
 }

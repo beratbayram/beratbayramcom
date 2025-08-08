@@ -11,7 +11,7 @@ export function ProjectCard({ repo }: ProjectCardProps) {
       href={repo.html_url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-gray-300 hover:shadow-md dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
+      className="group relative block overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all text-shadow-none hover:border-gray-300 hover:shadow-md dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700"
     >
       <div className="flex items-start justify-between">
         <div className="flex-1">

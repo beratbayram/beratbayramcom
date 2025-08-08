@@ -1,24 +1,26 @@
-import BrPrintButton from "@/lib/components/BrPrintButton";
+import auLogo from "@/lib/assets/au.webp";
+import css from "@/lib/assets/css.svg";
+import lit from "@/lib/assets/lit.svg";
+import nextJS from "@/lib/assets/next.svg";
+import react from "@/lib/assets/react.svg";
+import sass from "@/lib/assets/sass.svg";
+import TS from "@/lib/assets/ts.svg";
+import tailwind from "@/lib/assets/tw.svg";
+import uefLogo from "@/lib/assets/uef.webp";
+import wc from "@/lib/assets/wc.svg";
 import BrPdfDownloadButton from "@/lib/components/BrPdfDownloadButton";
-import Skill from "@/lib/components/Skill";
-import ExperienceItem from "@/lib/components/ExperienceItem";
-import EducationItem from "@/lib/components/EducationItem";
+import BrPrintButton from "@/lib/components/BrPrintButton";
 import CertificateItem from "@/lib/components/CertificateItem";
-import Section from "@/lib/components/Section";
-import SkillsGrid from "@/lib/components/SkillsGrid";
+import EducationItem from "@/lib/components/EducationItem";
+import ExperienceItem from "@/lib/components/ExperienceItem";
 import PageHeader from "@/lib/components/PageHeader";
+import Section from "@/lib/components/Section";
+import Skill from "@/lib/components/Skill";
+import SkillsGrid from "@/lib/components/SkillsGrid";
+import { getKeywords } from "@/lib/const/SEO_KEYWORDS";
 import { Groups, Psychology, RecordVoiceOver } from "@mui/icons-material";
 import { ButtonGroup } from "@mui/material";
-import react from "@/lib/assets/react.svg";
-import nextJS from "@/lib/assets/next.svg";
-import TS from "@/lib/assets/ts.svg";
-import lit from "@/lib/assets/lit.svg";
-import wc from "@/lib/assets/wc.svg";
-import css from "@/lib/assets/css.svg";
-import sass from "@/lib/assets/sass.svg";
-import tailwind from "@/lib/assets/tw.svg";
 import { Metadata } from "next";
-import { getKeywords } from "@/lib/const/SEO_KEYWORDS";
 
 export const metadata: Metadata = {
   title: "About Me - Experience, Skills & Background",
@@ -66,11 +68,10 @@ export default function AboutPage() {
             location="Ankara"
             period="Jul 2022 - Present"
             description={[
-              "Developed a React UI library and Web Components library using Lit and Typescript and used in multiple projects",
-              "Orchestrated a custom Micro Front-End Architecture",
-              "Developed using Next.js",
-              "Gave company-wide lectures",
-              "Mentored 2 generations of interns",
+              "Built reusable UI libraries (React, Lit, TypeScript) used across projects",
+              "Designed a custom Micro Front-End architecture",
+              "Developed with Next.js",
+              "Delivered company-wide lectures while mentoring three cohorts of interns",
             ]}
           />
 
@@ -79,20 +80,18 @@ export default function AboutPage() {
             company="TUBITAK BILGEM YTE"
             location="Cankaya, Ankara, Turkey"
             period="Jan 2022 - Jul 2022"
-            description={[
-              "Worked as a Front-End Developer specializing in CSS design with SASS",
-            ]}
+            description={["Refactored a huge legacy UI library"]}
           />
 
           <ExperienceItem
-            title="Part-Time Software Support Intern & Engineer"
+            title="Internship & Part-Time Software Support Engineer"
             company="P.I. Works, Inc."
             location="Istanbul, Turkey"
             period="Jul 2021 - Jan 2022"
             description={[
-              "Maintained in-house data processing pipelines",
-              "Worked in a multi-language environment",
-              "Handled customer issues",
+              "Optimized data pipelines",
+              "Supported a multilingual team",
+              "Delivered effective customer support",
             ]}
           />
 
@@ -119,6 +118,29 @@ export default function AboutPage() {
             company="Google"
             period="Nov 2019 - Aug 2020"
             url="https://x.com/dscankarauni"
+          />
+
+          <ExperienceItem
+            title="Designer"
+            company="DSCFest"
+            period="Aug 2020"
+            url="https://youtu.be/MK3g7f6A-P8?t=9958"
+            description={[
+              "DSCFest marked the finale of the 2019-2020 season, where leads showcased their yearly achievements",
+              "Demonstrated design skills by hosting an online Photoshop workshop, recreating the DSCFest banner from scratch",
+            ]}
+          />
+
+          <ExperienceItem
+            title="Designer"
+            company="ML Days"
+            period="Apr 2020 - Aug 2020"
+            url="https://bit.ly/mldays"
+            description={[
+              "ML Days is a training series featuring expert Machine Learning educators",
+              "Offered guidance on advancing in the field, self-development, and learning popular ML algorithms in an engaging environment",
+              "Event website available at the provided link",
+            ]}
           />
         </Section>
 
@@ -203,32 +225,35 @@ export default function AboutPage() {
         <Section title="Education">
           <EducationItem
             institution="Ankara University"
-            degree="Bachelor's Degree @ Computer Engineering"
-            period="Jan 2017 - Jan 2022"
+            degree="Bachelor's degree Computer Engineering"
+            period="Aug 2017 - Jun 2022"
             gpa={3.69}
+            logoSrc={auLogo}
+            logoAlt="Ankara University Logo"
           />
 
           <EducationItem
             institution="University of Eastern Finland"
-            degree="Erasmus+ @ Computer Science"
-            period="Jan 2021 - Jan 2021"
+            degree="Erasmus+ Computer Science"
+            period="Jan 2021 - Jun 2021"
+            logoSrc={uefLogo}
+            logoAlt="University of Eastern Finland Logo"
           />
         </Section>
 
         <Section title="Languages">
           <ul className="list-inside list-disc space-y-2">
-            <li>English (PROFESSIONAL_WORKING)</li>
-            <li>Turkish (NATIVE_OR_BILINGUAL)</li>
+            <li>
+              <strong>English:</strong> Professional Working Proficiency
+            </li>
+            <li>
+              <strong>Turkish:</strong> Native Proficiency
+            </li>
           </ul>
         </Section>
 
         <Section title="Certificates">
           <ul className="list-inside list-disc space-y-4">
-            <CertificateItem
-              title="Effective Presentation Techniques"
-              issuer="ANR Business Development Academy"
-              url="https://credential.certifyme.online/verify/2943f37414373"
-            />
             <CertificateItem
               title="UX/UI Design"
               issuer="Bahcesehir University"

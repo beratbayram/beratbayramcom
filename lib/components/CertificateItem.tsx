@@ -1,3 +1,5 @@
+import { BrLink } from "./BrLink";
+
 interface CertificateItemProps {
   title: string;
   issuer: string;
@@ -12,14 +14,13 @@ export default function CertificateItem({
   return (
     <li>
       <strong>
-        <a
+        <BrLink
           href={url}
           className="text-black underline dark:text-white"
           target="_blank"
-          rel="noopener noreferrer"
         >
           {title}
-        </a>
+        </BrLink>
       </strong>
       <br />
       <em className="text-gray-600 dark:text-gray-400">{issuer}</em>

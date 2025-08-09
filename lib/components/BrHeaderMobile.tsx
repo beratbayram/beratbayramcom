@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import { useState } from "react";
 import { BrLinks } from "./BrLinks";
 import { BrTitle } from "./BrTitle";
-import Link from "next/link";
+import { BrLink } from "./BrLink";
 
 export function BrHeaderMobile() {
   const [open, setOpen] = useState(false);
@@ -22,9 +22,9 @@ export function BrHeaderMobile() {
         >
           <KeyboardArrowDownIcon fontSize="inherit" />
         </IconButton>
-        <Link href="/">
+        <BrLink href="/">
           <BrTitle />
-        </Link>
+        </BrLink>
       </div>
       <Drawer anchor="top" open={open} onClose={() => setOpen(false)}>
         <Box role="presentation" onClick={() => setOpen(false)}>

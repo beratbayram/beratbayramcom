@@ -2,7 +2,7 @@
 
 import { Button, IconButton, useMediaQuery, useTheme } from "@mui/material";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import Link from "next/link";
+import { BrLink } from "./BrLink";
 
 interface BrPdfDownloadButtonProps {
   className?: string;
@@ -25,10 +25,9 @@ export default function BrPdfDownloadButton({
   if (isMobile) {
     return (
       <IconButton
-        component={Link}
+        component={BrLink}
         href={url}
         target="_blank"
-        rel="noopener noreferrer"
         className={className}
         aria-label="Download PDF resume"
         color={variant === "contained" ? "primary" : "default"}
@@ -40,10 +39,9 @@ export default function BrPdfDownloadButton({
 
   return (
     <Button
-      component={Link}
+      component={BrLink}
       href={url}
       target="_blank"
-      rel="noopener noreferrer"
       variant={variant}
       size={size}
       startIcon={<PictureAsPdfIcon />}

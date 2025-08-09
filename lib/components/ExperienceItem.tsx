@@ -1,3 +1,5 @@
+import { BrLink } from "./BrLink";
+
 interface ExperienceItemProps {
   title: string;
   company?: string;
@@ -28,14 +30,13 @@ export default function ExperienceItem({
       )}
       {url && (
         <p className="mb-2 text-gray-600 dark:text-gray-400">
-          <a
+          <BrLink
             href={url}
             className="text-black underline dark:text-white"
             target="_blank"
-            rel="noopener noreferrer"
           >
             {url.replace(/^https?:\/\//, "")}
-          </a>
+          </BrLink>
         </p>
       )}
       <p className="mb-4 text-gray-600 dark:text-gray-400">

@@ -1,6 +1,8 @@
+"use client";
 import { Card, CardActionArea, CardContent, Typography } from "@mui/material";
 import Image from "next/image";
 import { ReactNode } from "react";
+import { BrLink } from "./BrLink";
 
 interface SkillProps {
   name: string;
@@ -57,13 +59,7 @@ export default function Skill({
 
   if (href) {
     return (
-      <Card
-        component="a"
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        {...cardProps}
-      >
+      <Card component={BrLink} href={href} target="_blank" {...cardProps}>
         <CardActionArea>{cardContent}</CardActionArea>
       </Card>
     );

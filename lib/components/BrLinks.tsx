@@ -1,9 +1,9 @@
 "use client";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrTitle } from "./BrTitle";
+import { BrLink } from "./BrLink";
 
 const LINKS = [
   { href: "/about", label: "About" },
@@ -44,7 +44,7 @@ export function BrLinks({ orientation }: BrLinksProps) {
         value={"/"}
         key={"/"}
         label={<BrTitle />}
-        LinkComponent={Link}
+        LinkComponent={BrLink}
         href={"/"}
       />
       {LINKS.map(({ href, label }) => (
@@ -52,7 +52,7 @@ export function BrLinks({ orientation }: BrLinksProps) {
           value={href}
           key={href}
           label={label}
-          LinkComponent={Link}
+          LinkComponent={BrLink}
           href={href}
         />
       ))}

@@ -6,6 +6,8 @@
 - [Rich Results Test](https://search.google.com/test/rich-results/result?id=dCG3ISVJdHIawaEa_Zhtkw)
 - View Transitions
 - Give more space between hero photo and text
+- [Open Graph Images](https://vercel.com/docs/frameworks/full-stack/nextjs?framework=nextjs-app#open-graph-images)
+- Overflow flicker ( / => /about )
 
 ## Complete Blog Section
 

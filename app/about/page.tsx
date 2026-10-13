@@ -255,14 +255,14 @@ export default function AboutPage() {
         <Section title="Certificates">
           <ul className="list-inside list-disc space-y-4">
             <CertificateItem
+              title="Meta Front-End Developer"
+              issuer="Meta"
+              url="https://www.credly.com/badges/7bc8ecc3-26c9-4971-840e-54d0447db431/public_url"
+            />
+            <CertificateItem
               title="UX/UI Design"
               issuer="Bahcesehir University"
               url="https://drive.google.com/file/d/1k5FNs10I7qrssCZp_eOu1T7JHEiMb7Bj/view?usp=sharing"
-            />
-            <CertificateItem
-              title="Introduction to Front-End Development"
-              issuer="Meta"
-              url="https://www.coursera.org/account/accomplishments/certificate/6ABVVAPEQK7A"
             />
             <CertificateItem
               title="Erasmus Certificate of Achievement"

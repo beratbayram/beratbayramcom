@@ -17,6 +17,7 @@ const PATHS = Array.from({ length: 36 }, (_, i) => ({
   } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
   color: `rgba(15,23,42,${0.1 + i * 0.03})`,
   width: 0.5 + i * 0.03,
+  duration: 20 + Math.random() * 10,
 }));
 
 export function BgAnimation() {
@@ -43,7 +44,7 @@ export function BgAnimation() {
               pathOffset: [0, 1, 0],
             }}
             transition={{
-              duration: 20 + Math.random() * 10,
+              duration: path.duration,
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "reverse",
               ease: "easeInOut",

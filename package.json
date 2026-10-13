@@ -6,7 +6,7 @@
     "dev": "pnpm kill && next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit && next lint",
+    "lint": "tsc --noEmit && eslint .",
     "kill": "kill-port 3000 3001 3002",
     "prepare": "husky"
   },
@@ -39,17 +39,6 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@tailwindcss/oxide",
-      "sharp",
-      "unrs-resolver"
-    ],
-    "overrides": {
-      "@types/react": "19.2.7",
-      "@types/react-dom": "19.2.3"
-    }
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown",

@@ -1,0 +1,42 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      next:
+        patterns:
+          - next
+          - "@next/*"
+          - eslint-config-next
+      react:
+        patterns:
+          - react
+          - react-dom
+      mui:
+        patterns:
+          - "@mui/*"
+          - "@emotion/*"
+      tailwind:
+        patterns:
+          - tailwindcss
+          - "@tailwindcss/*"
+          - prettier-plugin-tailwindcss
+      dev-dependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # Pinned through overrides in pnpm-workspace.yaml
+      - dependency-name: "@types/react"
+      - dependency-name: "@types/react-dom"
+      # Keep Node types on the runtime's major
+      - dependency-name: "@types/node"
+        update-types:
+          - version-update:semver-major

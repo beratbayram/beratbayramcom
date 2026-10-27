@@ -37,8 +37,8 @@ export default function Skill({
       </div>
       <Typography
         variant="body2"
-        fontWeight="medium"
         color="text.primary"
+        sx={{ fontWeight: "medium" }}
         className="mt-2"
       >
         {name}

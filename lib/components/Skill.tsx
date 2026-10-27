@@ -22,7 +22,7 @@ export default function Skill({
   muiIcon,
 }: SkillProps) {
   const cardContent = (
-    <CardContent className="flex h-full min-h-[120px] flex-col items-center justify-between p-1 py-6">
+    <CardContent className="flex h-full min-h-30 flex-col items-center justify-between p-1 py-6">
       <div className="flex flex-1 flex-col items-center justify-center">
         {icon && (
           <Image
@@ -30,7 +30,7 @@ export default function Skill({
             alt={iconAlt ?? `${name} Logo`}
             height={48}
             width={48}
-            className={`size-[48px] ${iconClassName}`}
+            className={`size-12 ${iconClassName}`}
           />
         )}
         {muiIcon && <div className="mb-4">{muiIcon}</div>}

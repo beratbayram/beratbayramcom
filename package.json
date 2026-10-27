@@ -36,8 +36,8 @@
     "kill-port": "^2.0.1",
     "lint-staged": "^16.2.7",
     "prettier": "^3.9.10",
-    "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwindcss": "^4.1.17",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
   },
   "lint-staged": {

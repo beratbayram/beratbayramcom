@@ -26,6 +26,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* https://stackoverflow.com/q/13426875/14257078 */
+  /* viewport-fit=cover: keep the end of the page clear of the gesture bar */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 main {

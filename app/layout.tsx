@@ -16,6 +16,8 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
+  // Lets fixed backgrounds reach behind the Android gesture bar
+  viewportFit: "cover",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
@@ -45,7 +47,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <StructuredData />
         <SkipToMain />
         <BrTheme>
-          <div className="mx-auto max-w-4xl px-4">
+          <div className="mx-auto max-w-4xl pr-[max(1rem,env(safe-area-inset-right))] pl-[max(1rem,env(safe-area-inset-left))]">
             <BrHeader />
             <main id="main-content" tabIndex={-1}>
               {children}

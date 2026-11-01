@@ -17,6 +17,7 @@ const PATHS = Array.from({ length: 36 }, (_, i) => ({
   } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
   color: `rgba(15,23,42,${0.1 + i * 0.03})`,
   width: 0.5 + i * 0.03,
+  opacity: Math.min(1, 0.1 + i * 0.03),
   duration: 20 + Math.random() * 10,
 }));
 
@@ -36,11 +37,16 @@ export function BgAnimation() {
             d={path.d}
             stroke="currentColor"
             strokeWidth={path.width}
-            strokeOpacity={0.1 + path.id * 0.03}
-            initial={{ pathLength: 0.3, opacity: 0.6 }}
+            // strokeOpacity instead of opacity: motion runs opacity on SVG
+            // through WAAPI, which flickers in Chrome 156
+            initial={{ pathLength: 0.3, strokeOpacity: path.opacity * 0.6 }}
             animate={{
               pathLength: 1,
-              opacity: [0.3, 0.6, 0.3],
+              strokeOpacity: [
+                path.opacity * 0.3,
+                path.opacity * 0.6,
+                path.opacity * 0.3,
+              ],
               pathOffset: [0, 1, 0],
             }}
             transition={{

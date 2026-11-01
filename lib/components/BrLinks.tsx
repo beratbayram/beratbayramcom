@@ -11,6 +11,8 @@ const LINKS = [
   { href: "/blog", label: "Blog" },
 ];
 
+const TAB_VALUES = ["/", ...LINKS.map(({ href }) => href)];
+
 interface BrLinksProps {
   orientation?: "horizontal" | "vertical";
 }
@@ -19,10 +21,12 @@ export function BrLinks({ orientation }: BrLinksProps) {
   const pathname = usePathname();
 
   const variant = orientation === "vertical" ? "fullWidth" : "standard";
+  // MUI warns when the value matches no tab, e.g. on the 404 page
+  const value = TAB_VALUES.includes(pathname) ? pathname : false;
 
   return (
     <Tabs
-      value={pathname}
+      value={value}
       aria-label="tabs"
       orientation={orientation}
       variant={variant}

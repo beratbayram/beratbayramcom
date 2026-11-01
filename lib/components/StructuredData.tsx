@@ -1,4 +1,5 @@
 import { SEO_KEYWORDS } from "@/lib/const/SEO_KEYWORDS";
+import { SOCIALS } from "@/lib/const/SOCIALS";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -33,12 +34,7 @@ const structuredData = {
     ...SEO_KEYWORDS.technical,
     ...SEO_KEYWORDS.professional.slice(1), // Skip TÜBİTAK since it's in worksFor
   ],
-  sameAs: [
-    // Add your social media URLs here
-    "https://linkedin.com/in/beratbayram",
-    "https://github.com/beratbayram",
-    "https://twitter.com/beratbayram",
-  ],
+  sameAs: Object.values(SOCIALS),
 };
 
 export function StructuredData() {

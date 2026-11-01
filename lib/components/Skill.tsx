@@ -18,7 +18,7 @@ export default function Skill({
   href,
   icon,
   iconAlt,
-  iconClassName,
+  iconClassName = "",
   muiIcon,
 }: SkillProps) {
   const cardContent = (

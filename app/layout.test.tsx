@@ -1,7 +1,4 @@
-// @vitest-environment node
-// With no window, next/dynamic skips ssr: false parts like a real server render
 import { METADATA } from "@/lib/const/METADATA";
-import { JSDOM } from "jsdom";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 import RootLayout, { metadata, viewport } from "./layout";
@@ -21,13 +18,20 @@ vi.mock("next/navigation", async (importOriginal) => ({
   usePathname: () => "/",
 }));
 
+// The real wrapper's lazy import races these renders under jsdom.
+// index.server.test.tsx covers that it renders nothing during SSR.
+vi.mock("@/lib/components/BgAnimation", () => ({
+  default: () => <div data-testid="bg-animation" />,
+}));
+
 function renderLayout() {
   const html = renderToStaticMarkup(
     <RootLayout>
       <p>Page content</p>
     </RootLayout>,
   );
-  return new JSDOM(html).window.document;
+  // A parsed document has no window, so assertions below use plain DOM APIs
+  return new DOMParser().parseFromString(html, "text/html");
 }
 
 describe("RootLayout", () => {
@@ -95,7 +99,7 @@ describe("RootLayout", () => {
     expect(skipLink?.getAttribute("href")).toBe("#main-content");
     expect(
       skipLink!.compareDocumentPosition(header!) &
-        skipLink!.DOCUMENT_POSITION_FOLLOWING,
+        Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
   });
 
@@ -117,9 +121,9 @@ describe("RootLayout", () => {
     expect(header?.nextElementSibling).toBe(main);
   });
 
-  it("does not server-render the background animation", () => {
+  it("renders the background animation through its client-only wrapper", () => {
     const doc = renderLayout();
 
-    expect(doc.querySelector("svg title")).toBeNull();
+    expect(doc.querySelector('[data-testid="bg-animation"]')).not.toBeNull();
   });
 });

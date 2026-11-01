@@ -1,4 +1,7 @@
+// @vitest-environment node
+// With no window, next/dynamic skips ssr: false parts like a real server render
 import { METADATA } from "@/lib/const/METADATA";
+import { JSDOM } from "jsdom";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 import RootLayout, { metadata, viewport } from "./layout";
@@ -24,8 +27,7 @@ function renderLayout() {
       <p>Page content</p>
     </RootLayout>,
   );
-  // A parsed document has no window, so assertions below use plain DOM APIs
-  return new DOMParser().parseFromString(html, "text/html");
+  return new JSDOM(html).window.document;
 }
 
 describe("RootLayout", () => {
@@ -93,7 +95,7 @@ describe("RootLayout", () => {
     expect(skipLink?.getAttribute("href")).toBe("#main-content");
     expect(
       skipLink!.compareDocumentPosition(header!) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
+        skipLink!.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
   });
 

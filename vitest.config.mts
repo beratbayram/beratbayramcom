@@ -33,6 +33,9 @@ export default defineConfig({
   // Tests don't need Tailwind; skip loading postcss.config.mjs
   css: { postcss: { plugins: [] } },
   test: {
+    // Reuses one jsdom per worker instead of building it for every file,
+    // while each file still gets its own module graph
+    pool: "vmThreads",
     environment: "jsdom",
     setupFiles: ["./test/setup.ts"],
     include: ["{app,lib,test}/**/*.test.{ts,tsx}"],

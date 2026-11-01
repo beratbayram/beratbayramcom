@@ -4,6 +4,10 @@ import { defineConfig, type Plugin } from "vitest/config";
 
 const root = path.dirname(new URL(import.meta.url).pathname);
 
+// Use React's and Emotion's dev builds even when a CI sets NODE_ENV=production.
+// React's production build has no act(), which Testing Library needs.
+process.env.NODE_ENV = "test";
+
 const STATIC_IMAGE = /\.(png|jpe?g|gif|webp|avif|ico|svg)$/;
 
 // Next turns static image imports into { src, width, height } objects.

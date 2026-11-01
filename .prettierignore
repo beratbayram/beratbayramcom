@@ -1,0 +1,2 @@
+# pnpm writes this; reformatting it causes huge diffs on every install
+pnpm-lock.yaml

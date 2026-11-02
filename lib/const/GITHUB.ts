@@ -14,11 +14,4 @@ query {
   }
 }
 */
-// Private repos are filtered out on /projects, so a pinned one shows up only
-// once it is public
-export const PINNED = [
-  "god-micro-frontend",
-  "gulpsalot",
-  "beratbayramcom",
-  "little-lemon",
-];
+export const PINNED = ["god-micro-frontend", "gulpsalot", "beratbayramcom"];

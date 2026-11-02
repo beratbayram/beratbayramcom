@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import BgAnimation from "@/lib/components/BgAnimation";
 import { BrHeader } from "@/lib/components/BrHeader";
 import { BrTheme } from "@/lib/components/BrTheme";
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
           <BgAnimation />
         </BrTheme>
+        <Analytics />
       </body>
     </html>
   );

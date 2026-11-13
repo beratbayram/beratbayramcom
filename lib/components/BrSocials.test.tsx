@@ -68,7 +68,9 @@ describe("BrSocials", () => {
       screen.getByTestId("LinkedInIcon"),
       screen.getByTestId("GitHubIcon"),
     ]) {
-      expect(icon).toHaveStyle({ color: "var(--mui-palette-text-primary)" });
+      // Check the declared value: jsdom 31+ resolves var() in computed styles,
+      // and the variable is undefined without the theme provider.
+      expect(icon.style.color).toBe("var(--mui-palette-text-primary)");
     }
   });
 });
